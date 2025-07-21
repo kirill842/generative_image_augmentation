@@ -1,3 +1,3 @@
 # generative_image_augmentation
 
-# SOON™
+# DESCRIPTION SOON™
