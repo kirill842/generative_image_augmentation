@@ -1,6 +1,4 @@
-# generative_image_augmentation
-
-# [Read thesis](https://www.dropbox.com/scl/fi/8fvhxu0z3e09av9e7o2uz/2025-110508-_2.pdf?rlkey=9ukrmp6q3okqfvnuqkjqosctj&st=7fkuwf6z&dl=0) 
+# [Читать диплом](https://www.dropbox.com/scl/fi/8fvhxu0z3e09av9e7o2uz/2025-110508-_2.pdf?rlkey=9ukrmp6q3okqfvnuqkjqosctj&st=7fkuwf6z&dl=0) 
 
 ---
 
