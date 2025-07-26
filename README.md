@@ -56,7 +56,7 @@
      --text_label="<текстовый промпт, который сопоставить каждому изображению>"
    ```
 
-3. **Дообучение модели**
+5. **Дообучение модели**
 
    ```bash
    accelerate launch train_text_to_image_lora.py \
@@ -71,7 +71,7 @@
      --report_to="wandb" --num_validation_images=<количество генерируемых изображений для валидации>
    ```
 
-4. **Генерация**
+6. **Генерация**
 
    ```bash
    python sd_sampling_after_finetuning_lora.py \
@@ -86,7 +86,7 @@
    
    ```
 
-5. **Разметка**
+7. **Разметка**
 
    ```bash
    python annotate.py \
