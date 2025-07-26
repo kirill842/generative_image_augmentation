@@ -2,8 +2,6 @@
 
 # [Read thesis](https://www.dropbox.com/scl/fi/8fvhxu0z3e09av9e7o2uz/2025-110508-_2.pdf?rlkey=9ukrmp6q3okqfvnuqkjqosctj&st=7fkuwf6z&dl=0) 
 
-Вот пример содержательного и ёмкого описания для секции “About” вашего README.md на GitHub. Его можно дополнить по необходимости и адаптировать под стиль вашего профиля:
-
 ---
 
 ## About
