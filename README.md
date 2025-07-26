@@ -42,16 +42,15 @@
 3. **Дообучение модели**
 
    ```bash
-   python train_text_to_image_lora.py \
+   accelerate launch train_text_to_image_lora.py \
      --pretrained_model_name_or_path="stabilityai/stable-diffusion-2" \
-     --train_data_dir="data/birds_crops" \
-     --output_dir="lora_checkpoints" \
-     --text_prompts_file="data/prompts.txt" \
-     --resolution=768 \
-     --train_batch_size=1 \
-     --learning_rate=1e-4 \
-     --num_train_epochs=20 \
-     --lora_rank=4
+     --train_data_dir="../../../dataset_for_finetuning_v9" \
+     --caption_column="text" --center_crop --resolution=768 \
+     --random_flip --train_batch_size=1 --num_train_epochs=40
+     --checkpointing_steps=17 --learning_rate=1e-04 --lr_scheduler="constant" \
+     --lr_warmup_steps=0 --output_dir="../../../saved_model_v10" \
+     --validation_prompt="A photo of flying photorealistic bird in a photorealistic environment: in a city or in an urban area or in a forest or in a field or in the mountains" \
+     --report_to="wandb" --num_validation_images 20
    ```
 
 4. **Генерация**
