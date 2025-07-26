@@ -100,3 +100,8 @@
      --output_class_id=<какой id записать в выходной файл разметки, например 0> 
    ```
 
+## Acknowledgements
+
+- `train_text_to_image_lora.py` by [Original Author Name](https://github.com/author), 
+  licensed under MIT. Source: https://github.com/author/repo.
+
