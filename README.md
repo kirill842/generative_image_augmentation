@@ -90,9 +90,13 @@
 
    ```bash
    python annotate.py \
-     --images_dir="generated_images" \
-     --model="yolov8n.pt" \
-     --confidence=0.5 \
-     --output_annotations="annotations/"
+     --model_path="<путь к модели, например "yolov8.pt">" \
+     --image_dir="<путь к сгенерированным изображениям>" \
+     --label_out_dir="<путь к сохранению разметки>" \
+     --image_out_dir="<путь к сохранению изображений>" \
+     --conf_threshold=<порог фильтрации по степени уверенности модели в детекции> \
+     --device="какой девайс использовать, например "cuda:0"" \
+     --object_class_id=<какой объект детектировать моделью, например 14 - это класс птицы для yolov8> \
+     --output_class_id=<какой id записать в выходной файл разметки, например 0> 
    ```
 
