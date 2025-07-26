@@ -29,7 +29,7 @@
 1. **Клонировать репозиторий**
 
    ```bash
-   git clone https://github.com/kirill842/generative_image_augmentation.git
+   git clone https://github.com/kirill842/generative_image_augmentation
    cd generative_image_augmentation
    ```
 
