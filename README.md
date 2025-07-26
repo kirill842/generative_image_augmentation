@@ -59,7 +59,7 @@
 5. **Дообучение модели**
 
    ```bash
-   accelerate launch train_text_to_image_lora.py \
+   accelerate launch third_party/train_text_to_image_lora.py \
      --pretrained_model_name_or_path=<ссылка на предтренированную модель, например "stabilityai/stable-diffusion-2"> \
      --train_data_dir="<путь где лежат изображения для тренировки>" \
      --caption_column="text" --center_crop --resolution=<размер входного изображения генеративной модели> \
