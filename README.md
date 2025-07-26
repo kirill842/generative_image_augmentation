@@ -75,7 +75,15 @@
 
    ```bash
    python sd_sampling_after_finetuning_lora.py \
-     --pretrained_model_name_or_path="<предобученная модель, например: "stabilityai/stable-diffusion-2">"
+     --pretrained_model_name_or_path="<предобученная модель, например: "stabilityai/stable-diffusion-2">" \
+     --lora_checkpoint_dir="<путь до сохраненной модели, обученной на прошлом шаге>" \
+     --output_dir="<куда сохранять сгенерированные изображения>" \
+     --prompt="<промпт для генерации>" \
+     --device="<девайс для дообучения, например "cuda:0">" \
+     --num_inference_steps=<количество шаго обратной диффузии, например 30> \
+     --guidance_scale=<как сильно модели следовать промпту, например 7.5> \
+     --num_images=<сколько изображений генерировать, например 10000>
+   
    ```
 
 5. **Разметка**
