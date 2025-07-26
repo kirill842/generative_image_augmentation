@@ -39,18 +39,36 @@
    pip install -r requirements.txt
    ```
 
+3. **Датасет**
+
+   Необходимо сформировать папку с изображениями и папку с разметкой для детекции в формате YOLO. Имена файлов изображений должны соответствовать именам файлом с разметкой. Датасет с изображениями и с разметкой должны иметь папки train, val и test.
+
+4. **Подготовка изображений**
+
+   ```bash
+   python prepare_dataset_for_finetuning.py \
+     --images_dir="<путь к изображениям>" \
+     --labels_dir="<путь к меткам>" \
+     --output_dir="<путь куда сохранять изображения>" \
+     --crop_size=<размер входного изображения генеративной_модели> \
+     --percent=<минимальная площадь которую должен занимать объект чтобы изображение было сохранено>
+     --stride=<шаг вырезки объектов>
+     --text_label="<текстовый промпт, который сопоставить каждому изображению>"
+   ```
+
 3. **Дообучение модели**
 
    ```bash
    accelerate launch train_text_to_image_lora.py \
-     --pretrained_model_name_or_path="stabilityai/stable-diffusion-2" \
-     --train_data_dir="../../../dataset_for_finetuning_v9" \
-     --caption_column="text" --center_crop --resolution=768 \
-     --random_flip --train_batch_size=1 --num_train_epochs=40
-     --checkpointing_steps=17 --learning_rate=1e-04 --lr_scheduler="constant" \
-     --lr_warmup_steps=0 --output_dir="../../../saved_model_v10" \
-     --validation_prompt="A photo of flying photorealistic bird in a photorealistic environment: in a city or in an urban area or in a forest or in a field or in the mountains" \
-     --report_to="wandb" --num_validation_images 20
+     --pretrained_model_name_or_path=<ссылка на модель, например "stabilityai/stable-diffusion-2"> \
+     --train_data_dir="<путь где лежат изображения для тренировки>" \
+     --caption_column="text" --center_crop --resolution=<размер входного изображения генеративной модели> \
+     --random_flip --train_batch_size=1 --num_train_epochs=40 \
+     --checkpointing_steps=<через сколько шагов оптимизации генерировать валидационную выборку> \
+     --learning_rate=1e-04 --lr_scheduler="constant" \
+     --lr_warmup_steps=0 --output_dir="<куда сохранить модель>" \
+     --validation_prompt="<текстовая метка, которая была задана на прошлом шаге каждому изображению>" \
+     --report_to="wandb" --num_validation_images=<количество генерируемых изображений для валидации>
    ```
 
 4. **Генерация**
