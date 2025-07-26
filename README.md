@@ -60,10 +60,10 @@
 
    ```bash
    accelerate launch train_text_to_image_lora.py \
-     --pretrained_model_name_or_path=<ссылка на модель, например "stabilityai/stable-diffusion-2"> \
+     --pretrained_model_name_or_path=<ссылка на предтренированную модель, например "stabilityai/stable-diffusion-2"> \
      --train_data_dir="<путь где лежат изображения для тренировки>" \
      --caption_column="text" --center_crop --resolution=<размер входного изображения генеративной модели> \
-     --random_flip --train_batch_size=1 --num_train_epochs=40 \
+     --random_flip --train_batch_size=1 --num_train_epochs=<количество эпох тренировки> \
      --checkpointing_steps=<через сколько шагов оптимизации генерировать валидационную выборку> \
      --learning_rate=1e-04 --lr_scheduler="constant" \
      --lr_warmup_steps=0 --output_dir="<куда сохранить модель>" \
@@ -74,11 +74,8 @@
 4. **Генерация**
 
    ```bash
-   python generate.py \
-     --lora_checkpoint="lora_checkpoints/best.ckpt" \
-     --prompt="A flying or sitting realistic bird in a realistic environment" \
-     --num_images=500 \
-     --output_dir="generated_images"
+   python sd_sampling_after_finetuning_lora.py \
+     --pretrained_model_name_or_path="<предобученная модель, например: "stabilityai/stable-diffusion-2">"
    ```
 
 5. **Разметка**
