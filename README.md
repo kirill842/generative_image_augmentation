@@ -89,7 +89,7 @@
 7. **Разметка**
 
    ```bash
-   python auto_labeling_using_yolov8_with_img_transfer.py \
+   python auto_labeling_with_img_transfer.py \
      --model_path="<путь к модели, например "yolov8.pt">" \
      --image_dir="<путь к сгенерированным изображениям>" \
      --label_out_dir="<путь к сохранению разметки>" \
