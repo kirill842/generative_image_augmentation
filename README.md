@@ -103,7 +103,7 @@
 ## Third‑Party Components
 
 - `third_party/train_text_to_image_lora.py`  
-  Licensed under Apache License 2.0. See [LICENSE](./LICENSE).  
+  Licensed under Apache License 2.0. See [LICENSE](./LICENSE.md).  
   Original source: https://github.com/huggingface/diffusers
 
 
