@@ -1,6 +1,6 @@
-#!/usr/bin/env python
-# coding=utf-8
-# Copyright 2025 The HuggingFace Inc. team. All rights reserved.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# Copyright 2025 Kirill Lekanov. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -92,7 +92,8 @@ def run_detection(
             cv2.imwrite(out_path, image)
             # print(f"[INFO] {img_name}: сохранено изображение и {len(annotations)} аннотаций")
 
-    print("Генерация разметки и сохранение изображений завершены — пустые файлы не создаются.")
+    print("Генерация разметки и сохранение изображений завершены")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run YOLOv8 + SAHI sliced inference and save YOLO-format labels')
